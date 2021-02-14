@@ -8,21 +8,23 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-    private var appdelegate: AppDelegate = (UIApplication.shared.delegate as? AppDelegate)!
-    @IBAction func selectTokyo(_ sender: Any) {
-        appdelegate.place = "東京"
-        self.performSegue(withIdentifier: "toMain", sender: self)
+    var place :String = ""
+
+    @IBAction func selectTokyo(_ sender: AnyObject) {
+        selectPlace(placeName: "東京", sender: sender)
     }
-    @IBAction func selectKanagawa(_ sender: Any) {
-        appdelegate.place = "神奈川県"
-        self.performSegue(withIdentifier: "toMain", sender: self)
+    // senderとはなんでしょうか。swift実践入門を見たのですが記述がありませんでした。
+    @IBAction func selectKanagawa(_ sender: AnyObject) {
+        selectPlace(placeName: "神奈川", sender: sender)
     }
-    @IBAction func selectSaitama(_ sender: Any) {
-        appdelegate.place = "埼玉県"
-        self.performSegue(withIdentifier: "toMain", sender: self)
+    @IBAction func selectSaitama(_ sender: AnyObject) {
+        selectPlace(placeName: "埼玉", sender: sender)
     }
-    @IBAction func selectChiba(_ sender: Any) {
-        appdelegate.place = "千葉県"
-        self.performSegue(withIdentifier: "toMain", sender: self)
+    @IBAction func selectChiba(_ sender: AnyObject) {
+        selectPlace(placeName: "千葉", sender: sender)
+    }
+    private func selectPlace(placeName:String, sender: AnyObject) {
+        place = placeName
+        performSegue(withIdentifier: "toFirst", sender: sender)
     }
 }

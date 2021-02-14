@@ -9,14 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet private weak var selectedPlaceLabel: UILabel!
-    private var appdelegate: AppDelegate = (UIApplication.shared.delegate as? AppDelegate)!
-
-    override func viewWillAppear(_ animated: Bool) {
-        if appdelegate.place == nil {
-            selectedPlaceLabel.text = "未選択"
-        } else {
-            selectedPlaceLabel.text = appdelegate.place
-        }
+    @IBOutlet  weak var selectedPlaceLabel: UILabel!
+    @IBAction func selected(segue:UIStoryboardSegue) {
+        guard let secondVC = segue.source as? SecondViewController else { return }
+        selectedPlaceLabel.text = secondVC.place
     }
 }

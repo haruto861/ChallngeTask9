@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChallengeTask9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="都道府県" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xh1-XJ-GhZ">
@@ -35,7 +35,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="入力"/>
                                 <connections>
-                                    <segue destination="7Sg-dk-8Za" kind="presentation" id="aka-LC-nya"/>
+                                    <segue destination="THh-2h-F4Q" kind="presentation" id="KkO-k6-gDf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,7 +63,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="東京"/>
                                 <connections>
-                                    <action selector="selectTokyo:" destination="7Sg-dk-8Za" eventType="touchUpInside" id="om5-nZ-3Yc"/>
+                                    <action selector="selectTokyo:" destination="7Sg-dk-8Za" eventType="touchUpInside" id="KSl-Ob-NKC"/>
+                                    <segue destination="EJh-De-le0" kind="unwind" identifier="toFirst" unwindAction="selectedWithSegue:" id="V5O-Rv-o2U"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hj-HH-YwX">
@@ -71,7 +72,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="神奈川県"/>
                                 <connections>
-                                    <action selector="selectKanagawa:" destination="7Sg-dk-8Za" eventType="touchUpInside" id="lgU-LC-Iat"/>
+                                    <action selector="selectKanagawa:" destination="7Sg-dk-8Za" eventType="touchUpInside" id="8ED-Er-HU9"/>
+                                    <segue destination="EJh-De-le0" kind="unwind" identifier="toFirst" unwindAction="selectedWithSegue:" id="YvF-ah-4Q6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="db0-BH-OMd">
@@ -79,7 +81,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="埼玉県"/>
                                 <connections>
-                                    <action selector="selectSaitama:" destination="7Sg-dk-8Za" eventType="touchUpInside" id="SFg-ze-RRs"/>
+                                    <action selector="selectSaitama:" destination="7Sg-dk-8Za" eventType="touchUpInside" id="xVQ-vt-EXR"/>
+                                    <segue destination="EJh-De-le0" kind="unwind" identifier="toFirst" unwindAction="selectedWithSegue:" id="C47-I4-beU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4m-dU-NBK">
@@ -87,20 +90,38 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="千葉県"/>
                                 <connections>
-                                    <action selector="selectChiba:" destination="7Sg-dk-8Za" eventType="touchUpInside" id="Ym9-pj-Ggu"/>
+                                    <action selector="selectChiba:" destination="7Sg-dk-8Za" eventType="touchUpInside" id="DjD-GD-c6J"/>
+                                    <segue destination="EJh-De-le0" kind="unwind" identifier="toFirst" unwindAction="selectedWithSegue:" id="j3v-p5-lSP"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3uV-ez-0mi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toMain" id="heY-FW-3Y4"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="b8e-Pf-aTu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWZ-HV-6JM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="EJh-De-le0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="781" y="88"/>
+            <point key="canvasLocation" x="1689.8550724637682" y="87.723214285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Mg9-e3-ESU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="THh-2h-F4Q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CCN-9J-owg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7Sg-dk-8Za" kind="relationship" relationship="rootViewController" id="gh1-4s-3qU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dIv-hC-qpq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="779.71014492753625" y="87.723214285714278"/>
         </scene>
     </scenes>
     <resources>
