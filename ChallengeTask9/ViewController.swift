@@ -9,7 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet  weak var selectedPlaceLabel: UILabel!
+    @IBOutlet private weak var selectedPlaceLabel: UILabel!
+    
     @IBAction func selected(segue:UIStoryboardSegue) {
         guard let secondVC = segue.source as? SecondViewController else { return }
         selectedPlaceLabel.text = secondVC.place
