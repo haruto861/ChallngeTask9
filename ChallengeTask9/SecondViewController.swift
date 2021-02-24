@@ -9,7 +9,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    var place :String?
+    private(set) var place :String?
     // _senderの引数をUIButtonかsenderobjectにするか迷ったのですが、今回のように接続が複数個ある場合にはanyObjectを使用するのでしょうか。
     @IBAction func selectTokyo(_ sender: AnyObject) {
         selectPlace(placeName: "東京", sender: sender)
